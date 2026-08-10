@@ -120,7 +120,7 @@
 }
 
 .hero-title {
-  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-size: clamp(2.2rem, 8vw, 5.5rem);
   letter-spacing: -2px;
   margin-bottom: 8px;
   background: linear-gradient(to right, #fff, #a1a1aa);

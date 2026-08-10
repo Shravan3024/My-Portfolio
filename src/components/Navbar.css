@@ -32,13 +32,21 @@
 }
 
 .navbar-logo-img {
-  height: 55px;
+  height: 45px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 0 8px rgba(0, 150, 255, 0.3));
-  transform: scale(1.6);
+  transform: scale(1.2);
   transform-origin: left center;
-  margin-left: -20px;
+  margin-left: -10px;
+}
+
+@media (min-width: 768px) {
+  .navbar-logo-img {
+    height: 55px;
+    transform: scale(1.6);
+    margin-left: -20px;
+  }
 }
 
 .desktop-menu {
