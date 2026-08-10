@@ -86,7 +86,7 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="contact-form">
 
             {/* Replace YOUR_ACCESS_KEY_HERE with your actual access key from web3forms.com */}
-            <input type="hidden" name="access_key" value="adc312f9-324e-4322-acb3-3fda3bc6dc03" />
+            <input type="hidden" name="access_key" value="wqwertyuiop" />
             <input type="hidden" name="subject" value="New Contact from Portfolio!" />
 
             <div className="form-group">
