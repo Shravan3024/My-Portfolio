@@ -1,0 +1,60 @@
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.research-card {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.r-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(187, 134, 252, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-purple);
+  margin-bottom: 8px;
+}
+
+.research-card h3 {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+}
+
+.r-text {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.r-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text-secondary);
+  padding-left: 24px;
+}
+
+.r-list li {
+  position: relative;
+}
+
+.r-list li::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+}

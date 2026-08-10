@@ -1,0 +1,49 @@
+.cosmic-background {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cosmic-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.cosmic-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 4px #ffffff, 0 0 10px var(--accent-blue);
+}
+
+.nebula {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -1;
+}
+
+.nebula-1 {
+  top: 10%;
+  left: 30%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.3) 0%, rgba(138, 43, 226, 0) 70%);
+}
+
+.nebula-2 {
+  bottom: 20%;
+  right: 20%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(67, 233, 123, 0.2) 0%, rgba(67, 233, 123, 0) 70%);
+}

@@ -1,0 +1,174 @@
+.achievements-gallery {
+  position: relative;
+  width: 100%;
+  padding: 6rem 5%;
+  overflow: hidden;
+  background-color: var(--bg-main);
+  z-index: 1;
+}
+
+/* Background Animations */
+.ag-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.ag-floating-element {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.ag-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.ag-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .ag-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .ag-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  /* Bento Grid spanning */
+  .ag-card:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  .ag-card:nth-child(2) { grid-column: span 1; grid-row: span 1; }
+  .ag-card:nth-child(3) { grid-column: span 1; grid-row: span 1; }
+  .ag-card:nth-child(4) { grid-column: span 1; grid-row: span 1; }
+  .ag-card:nth-child(5) { grid-column: span 2; grid-row: span 1; }
+}
+
+.ag-card {
+  background: var(--bg-card);
+  border-radius: 24px;
+  border: 1px solid var(--border-glass);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.ag-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 255, 170, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.ag-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.ag-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ag-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Photo Stack Component */
+.photo-stack-container {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 250px;
+  perspective: 1000px;
+  cursor: pointer;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ag-card:nth-child(1) .photo-stack-container {
+  min-height: 400px; /* Minimum height for the featured spanning card */
+}
+.ag-card:nth-child(5) .photo-stack-container {
+  min-height: 350px;
+}
+
+.photo-stack-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transform-origin: center center;
+  background-color: var(--bg-dark);
+}
+
+.photo-stack-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Photo indicator hint */
+.photo-stack-hint {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.photo-stack-hint svg {
+  width: 14px;
+  height: 14px;
+}

@@ -1,0 +1,70 @@
+.ac-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+@media (min-width: 992px) {
+  .ac-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+}
+
+.ac-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.ac-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.ac-header h3 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+}
+
+.ac-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ac-card {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ac-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.cert-card {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.cert-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}

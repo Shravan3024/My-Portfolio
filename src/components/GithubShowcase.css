@@ -1,0 +1,159 @@
+.github-bento {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 992px) {
+  .github-bento {
+    grid-template-columns: 1fr 2fr;
+  }
+  
+  .gh-span-full {
+    grid-column: 1 / -1;
+  }
+}
+
+.gh-card {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gh-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.gh-card-header h3 {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+}
+
+.gh-chart-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+.gh-chart {
+  width: 100%;
+  min-width: 700px;
+  filter: invert(1) hue-rotate(180deg); /* Creates a perfect dark mode with green contributions */
+}
+
+.gh-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  height: 100%;
+}
+
+.gh-stat-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-glass);
+}
+
+.gh-stat-value {
+  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gh-stat-label {
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-top: 8px;
+}
+
+.gh-repos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .gh-repos-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.gh-repo-item {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.gh-repo-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(187, 134, 252, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gh-repo-name {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.gh-repo-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.gh-repo-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: auto;
+}
+
+.gh-repo-lang {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+}
+
+.gh-repo-stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.gh-loading {
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 40px;
+}

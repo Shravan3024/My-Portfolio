@@ -1,0 +1,54 @@
+.projects-background {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.tech-elements-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.floating-tech {
+  position: absolute;
+  filter: drop-shadow(0 0 15px currentColor);
+}
+
+.data-node {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #00f2fe;
+  box-shadow: 0 0 10px #00f2fe, 0 0 20px #4facfe;
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+}
+
+.orb-1 {
+  top: 20%;
+  left: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(118, 75, 162, 0.4) 0%, rgba(102, 126, 234, 0) 70%);
+}
+
+.orb-2 {
+  bottom: 10%;
+  right: 5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.3) 0%, rgba(79, 172, 254, 0) 70%);
+}
