@@ -11,17 +11,17 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('submitting');
-    
+
     const formData = new FormData(e.currentTarget);
-    
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
       });
-      
+
       const data = await response.json();
-      
+
       if (data.success) {
         setStatus('success');
         (e.target as HTMLFormElement).reset();
@@ -41,7 +41,7 @@ const Contact = () => {
   return (
     <section id="contact" className="section-container">
       <div className="contact-wrapper">
-        <motion.div 
+        <motion.div
           className="contact-info"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -52,23 +52,23 @@ const Contact = () => {
             <img src={bitmojiImg} alt="Shravan" className="contact-bitmoji" />
           </div>
           <h2 className="contact-title">Let's Build Something <span className="text-gradient">Amazing</span> Together.</h2>
-          
+
           <div className="contact-methods">
             <a href="mailto:navaleshravan7@gmail.com" className="contact-method-link glass">
               <Mail className="c-icon text-gradient" />
               <span>Reach out via Email</span>
             </a>
-            
+
             <a href="https://github.com/Shravan3024" target="_blank" rel="noreferrer" className="contact-method-link glass">
               <FaGithub className="c-icon text-gradient" />
               <span>Explore my GitHub</span>
             </a>
-            
+
             <a href="https://www.linkedin.com/in/shravan-navale-29b5ba254/" target="_blank" rel="noreferrer" className="contact-method-link glass">
               <FaLinkedin className="c-icon text-gradient" />
               <span>Connect on LinkedIn</span>
             </a>
-            
+
             <div className="contact-method-link glass no-hover">
               <MapPin className="c-icon text-gradient" />
               <span>Pune, Maharashtra</span>
@@ -76,7 +76,7 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="contact-form-container glass-card"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -84,26 +84,26 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <form onSubmit={handleSubmit} className="contact-form">
-            
+
             {/* Replace YOUR_ACCESS_KEY_HERE with your actual access key from web3forms.com */}
-            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+            <input type="hidden" name="access_key" value="adc312f9-324e-4322-acb3-3fda3bc6dc03" />
             <input type="hidden" name="subject" value="New Contact from Portfolio!" />
 
             <div className="form-group">
               <input type="text" id="name" name="name" required placeholder=" " />
               <label htmlFor="name">Your Name</label>
             </div>
-            
+
             <div className="form-group">
               <input type="email" id="email" name="email" required placeholder=" " />
               <label htmlFor="email">Your Email</label>
             </div>
-            
+
             <div className="form-group">
               <textarea id="message" name="message" required placeholder=" " rows={5}></textarea>
               <label htmlFor="message">Your Message</label>
             </div>
-            
+
             <button type="submit" className="submit-btn text-gradient-bg" disabled={status === 'submitting'}>
               {status === 'idle' && <>Send Message <Send size={18} /></>}
               {status === 'submitting' && 'Sending...'}
